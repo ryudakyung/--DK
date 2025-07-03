@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Alyysum - 설정</title>
+  <link rel="stylesheet" href="./css/font.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background-color: #f6f4f4; /* 전체 배경 흰색 */
+      margin: 0;
+    }
+
+    header {
+      background-color: #a7cba9;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header span {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #ffffff;
+    }
+
+    .settings-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 60px 40px;
+    }
+
+    .settings-title {
+      font-size: 3rem;
+      font-weight: 600;
+      color: #111;
+      margin-bottom: 60px;
+    }
+
+    .settings-list {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .settings-link {
+      font-size: 1.5rem;
+      color: #222;
+      text-decoration: none;
+    }
+
+    .settings-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="bg-[#a7cba9]  top-0 z-10">
+    <div class="max-w-7xl mx-auto grid grid-cols-3 items-center px-0 py-0.25">
+      <!-- Left: Hamburger Menu -->
+      <div class="flex items-center">
+        <button class="text-white focus:outline-none" aria-label="메뉴">
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+      <!-- Center: Logo -->
+      <div class="flex justify-center">
+        <span class="text-2xl font-bold tracking-wide text-white select-none">Alyysum</span>
+      </div>
+  
+      <!-- Right: Auth Buttons -->
+      <div class="flex justify-end text-sm space-x-0 pr-0">
+        <button onclick="goTo('login')" class="text-white px-3 py-1 transition hover:underline">마이페이지</button>
+      </div>
+  </header>
+
+  <!-- 설정 콘텐츠 -->
+  <div class="settings-container">
+    <div class="settings-title">설정</div>
+    <div class="settings-list">
+      <a href="#" class="settings-link">- 개인정보 확인</a>
+      <a href="#" class="settings-link">- 알림설정</a>
+      <a href="#" class="settings-link">- 세부설정</a>
+      <a href="#" class="settings-link">- 문의</a>
+    </div>
+  </div>
+
+</body>
+</html>
+
