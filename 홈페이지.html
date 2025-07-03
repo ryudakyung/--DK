@@ -43,9 +43,9 @@
       
           <!-- Right: Auth Buttons -->
           <div class="flex justify-end text-sm space-x-0 pr-0">
-            <button onclick="goTo('signup')" class="text-white px-3 py-1 transition hover:underline">회원가입</button>
+            <a href="./회원가입.html" class="text-white px-3 py-1 transition hover:underline">회원가입</a>
             <span class="text-white select-none">/</span>
-            <button onclick="goTo('login')" class="text-white px-3 py-1 transition hover:underline">로그인</button>
+            <a href="./로그인페이지.html" class="text-white px-3 py-1 transition hover:underline">로그인</a>
           </div>
       
         </div>
@@ -58,7 +58,7 @@
       <div class="text-center mb-4">
         <h2 class="text-sm text-gray-800 mb-1">단순하지만 편리한,<br>따뜻하고 편안한,<br><span class="text-gray-800 font-bold">알리섬</span></h2>
       </div>
-      <button onclick="goTo('mypage')" class="bg-[#2C2E33]  text-white text-sm px-10 py-1 transition">시작하기</button>
+      <a href="./로그인페이지.html" class="bg-[#2C2E33]  text-white text-sm px-10 py-1 transition">시작하기</a>
     </section>
 
     <!-- Placeholder for future content -->
@@ -80,8 +80,7 @@
           1월 12일의 탄생화는 알리섬입니다.
         </p>
         <div class="flex gap-2 ">
-          <a href="./1.html" class="w-40 bg-[#9A9994] text-white px-10 py-1 transition">문의사항</a>
-          <button onclick="goTo('settings')" class="w-40 bg-[#2C2E33] text-white px-10 py-1 transition">설정</button>
+          <a href="./문의사항.html" class="w-40 bg-[#9A9994] text-white px-10 py-1 transition flex items-center justify-center">문의사항</a>
         </div>
       </div>
     </section>
@@ -98,26 +97,5 @@
       <div class="flex-1 bg-[#d5e8d4] h-40"></div>
     </div>
   </main>
-
-  <!-- Simple navigation simulation -->
-  <script>
-    function goTo(page) {
-      let msg = '';
-      switch(page) {
-        case 'login':
-          msg = '로그인 페이지로 이동합니다.';
-          break;
-        case 'signup':
-          msg = '회원가입 페이지로 이동합니다.';
-          break;
-        case 'settings':
-          msg = '설정 페이지로 이동합니다.';
-          break;
-        default:
-          msg = '';
-      }
-      if(msg) alert(msg);
-    }
-  </script>
 </body>
 </html>
