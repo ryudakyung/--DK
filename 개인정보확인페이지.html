@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Alyysum - 개인정보 확인</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./css/font.css" rel="stylesheet">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --primary: #bfe2db;
+      --border: #b0b5bb;
+      --input-border: #b0b5bb;
+      --background: #fafcfb;
+      --text-main: #232323;
+      --text-muted: #a0a4ad;
+    }
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      background: var(--background);
+      color: var(--text-main);
+      min-height: 100vh;
+    }
+    body {
+      box-sizing: border-box;
+      min-height: 100vh;
+      margin: 0;
+      padding: 0;
+      background: #f6f4f4;
+    }
+    .container {
+      border: 3px solid var(--border);
+      border-radius: 0.5rem;
+      margin: 12px auto;
+      max-width: 98vw;
+      min-height: 95vh;
+      background: #fff;
+      box-sizing: border-box;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+    .header {
+      background-color: #a7cba9;
+      color: w;
+      padding: 20px;
+      text-align: center;
+      font-size: 24px;
+    }
+    .main-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      padding: 60px 0 0 90px;
+    }
+    .title {
+      font-size: 3.2rem;
+      font-weight: 400;
+      margin-bottom: 60px;
+      letter-spacing: 0.08em;
+      color: var(--text-main);
+    }
+    .form-group {
+      margin-bottom: 48px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .form-row {
+      display: flex;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+    .label {
+      font-size: 1.7rem;
+      margin-right: 18px;
+      min-width: 110px;
+      color: var(--text-main);
+      letter-spacing: 0.04em;
+    }
+    input[type="text"], input[type="password"] {
+      font-size: 1.3rem;
+      padding: 8px 14px;
+      border: 2px solid var(--input-border);
+      border-radius: 5px;
+      outline: none;
+      transition: border 0.2s;
+      width: 260px;
+      background: #f8fafb;
+      color: var(--text-main);
+    }
+    input[type="text"]:focus, input[type="password"]:focus {
+      border-color: var(--input-focus);
+      background: #fff;
+    }
+    .change-password {
+      font-size: 1rem;
+      color: var(--text-muted);
+      margin-left: 128px;
+      margin-top: 4px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .change-password:hover {
+      color: var(--primary-border);
+      text-decoration: underline;
+    }
+    @media (max-width: 700px) {
+      .main-content {
+        padding: 30px 10px 0 10px;
+      }
+      .title {
+        font-size: 2.1rem;
+        margin-bottom: 32px;
+      }
+      .label {
+        font-size: 1.1rem;
+        min-width: 70px;
+      }
+      input[type="text"], input[type="password"] {
+        font-size: 1rem;
+        width: 100%;
+        min-width: 0;
+      }
+      .change-password {
+        margin-left: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+    <!-- Header -->
+  <header class="bg-[#a7cba9]  top-0 z-10">
+    <div class="max-w-7xl mx-auto grid grid-cols-3 items-center px-6 py-4">
+      <!-- Left: Hamburger Menu -->
+      <div class="flex items-center">
+        <button class="text-white focus:outline-none" aria-label="메뉴">
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+      <!-- Center: Logo -->
+      <div class="flex justify-center">
+        <span class="text-2xl font-bold tracking-wide text-white select-none">Alyysum</span>
+      </div>
+  
+      <!-- Right: Auth Buttons -->
+      <div class="flex justify-end text-sm space-x-0 pr-0">
+        <a href="./마이페이지.html" class="text-white px-4 py-1 transition hover:underline">마이페이지</a>
+      </div>
+  </header>
+    <div class="main-content">
+      <div class="title">개인정보 확인</div>
+      <form autocomplete="off">
+        <div class="form-group">
+          <div class="form-row">
+            <label class="label" for="userid">-아이디:</label>
+            <input type="text" id="userid" name="userid" autocomplete="username" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="form-row">
+            <label class="label" for="password">-비밀번호:</label>
+            <input type="password" id="password" name="password" autocomplete="current-password" required>
+          </div>
+          <a href="#" class="change-password">비밀번호 변경</a>
+        </div>
+      </form>
+    </div>
+</body>
+</html>

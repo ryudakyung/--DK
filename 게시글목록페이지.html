@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>게시글 목록</title>
+    <title>Alyysum - 개인정보 확인</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./css/font.css" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+      background: #f6f4f4;
+    }
+      .header {
+      background-color: #a7cba9;
+      color: w;
+      padding: 20px;
+      text-align: center;
+      font-size: 24px;
+    }
+
+      .menu-button {
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        font-size: 20px;
+        cursor: pointer;
+      }
+
+      .container {
+        max-width: 400px;
+        margin: 0 auto;
+        background-color: white;
+        padding: 20px;
+        text-align: center;
+      }
+
+      h2 {
+        margin-top: 0;
+      }
+
+      .post-button {
+        display: block;
+        width: 80%;
+        margin: 10px auto;
+        padding: 10px;
+        border: 1px solid #999;
+        border-radius: 8px;
+        background-color: white;
+        cursor: pointer;
+        font-size: 16px;
+      }
+
+      .pagination {
+        margin-top: 20px;
+      }
+
+      .page-number {
+        display: inline-block;
+        padding: 5px 10px;
+        border: 1px solid #999;
+        border-radius: 4px;
+        background-color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+  <header class="bg-[#a7cba9]  top-0 z-10">
+    <div class="max-w-7xl mx-auto grid grid-cols-3 items-center px-6 py-4">
+      <!-- Left: Hamburger Menu -->
+      <div class="flex items-center">
+        <button class="text-white focus:outline-none" aria-label="메뉴">
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+      <!-- Center: Logo -->
+      <div class="flex justify-center">
+        <span class="text-2xl font-bold tracking-wide text-white select-none">Alyysum</span>
+      </div>
+  
+      <!-- Right: Auth Buttons -->
+      <div class="flex justify-end text-sm space-x-0 pr-0">
+        <a href="./마이페이지.html" class="text-white px-4 py-1 transition hover:underline">마이페이지</a>
+      </div>
+  </header>
+
+    <div class="container">
+      <h2>게시글 목록</h2>
+
+      <button class="post-button">게시물 1</button>
+      <button class="post-button">게시물 2</button>
+      <button class="post-button">게시물 3</button>
+      <button class="post-button">게시물 4</button>
+      <button class="post-button">게시물 5</button>
+      <button class="post-button">게시물 6</button>
+      <button class="post-button">게시물 7</button>
+      <button class="post-button">게시물 8</button>
+      <button class="post-button">게시물 9</button>
+      <button class="post-button">게시물 10</button>
+
+      <div class="pagination">
+        <span class="page-number">1</span>
+      </div>
+    </div>
+  </body>
+</html>

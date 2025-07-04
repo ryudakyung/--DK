@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Alyssum</title>
+    <link rel="stylesheet" href="./css/font.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+      background: #f6f4f4;
+    }
+
+      .header {
+        background-color: #a8d5ae;
+        color: white;
+        text-align: center;
+        padding: 10px;
+        font-size: 14px;
+      }
+
+      .toolbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px 10px;
+        border-bottom: 1px solid #f6f4f4;
+      }
+
+      .folder-icon {
+        width: 30px;
+        height: 30px;
+      }
+
+      .toolbar-center {
+        font-size: 20px;
+      }
+
+      .register-button {
+        padding: 5px 10px;
+        border: 1px solid #000;
+        cursor: pointer;
+        border-radius: 10px;
+      }
+
+      .title-row {
+        text-align: center;
+        font-weight: bold;
+        color: #aaa;
+        padding: 10px 0;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .input-area {
+        padding: 20px;
+      }
+
+      .input-placeholder {
+        color: #aaa;
+        cursor: text;
+      }
+
+      textarea {
+        width: 100%;
+        height: 200px;
+        font-size: 16px;
+        border: none;
+        resize: none;
+        outline: none;
+      }
+    </style>
+  </head>
+  <body>
+     <!-- Header -->
+  <header class="bg-[#a7cba9]  top-0 z-10">
+    <div class="max-w-7xl mx-auto grid grid-cols-3 items-center px-6 py-4">
+      <!-- Left: Hamburger Menu -->
+      <div class="flex items-center">
+        <button class="text-white focus:outline-none" aria-label="메뉴">
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+      <!-- Center: Logo -->
+      <div class="flex justify-center">
+        <span class="text-2xl font-bold tracking-wide text-white select-none">Alyysum</span>
+      </div>
+  
+      <!-- Right: Auth Buttons -->
+      <div class="flex justify-end text-sm space-x-0 pr-0">
+        <a href="./마이페이지.html" class="text-white px-4 py-1 transition hover:underline">마이페이지</a>
+      </div>
+  </header>
+
+    <div class="toolbar">
+      <img
+        src="./img/folder_icon_transparent.png"
+        class="folder-icon"
+        alt="folder icon"
+      />
+      <div class="toolbar-center">목록:전체</div>
+      <button class="register-button">등록</button>
+    </div>
+
+    <div class="border-t border-gray-300 my-2"></div>
+
+    <div class="mb-4">
+        <input id="title" type="text" placeholder="제목을 입력하세요"
+               class="w-full px-4 py-2 rounded-md bg-[#f6f4f4] focus:outline-none ">
+      </div>
+
+    <div class="input-area" onclick="activateEditor()" id="inputArea">
+      <div class="input-placeholder" id="placeholder">이곳에 입력하세요</div>
+    </div>
+
+    <script>
+      function activateEditor() {
+        const inputArea = document.getElementById("inputArea");
+        const textarea = document.createElement("textarea");
+        textarea.placeholder = "이곳에 입력하세요";
+        textarea.autofocus = true;
+        textarea.style.backgroundColor = "#f6f4f4";
+        textarea.style.width = "100%";
+        textarea.style.height = "400px";
+        textarea.style.fontSize = "16px";
+        textarea.style.border = "none";
+        textarea.style.resize = "none";
+        textarea.style.outline = "none";
+        padding: "10px";
+        inputArea.innerHTML = "";
+        inputArea.appendChild(textarea);
+      }
+    </script>
+  </body>
+</html>
