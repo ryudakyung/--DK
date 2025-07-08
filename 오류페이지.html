@@ -1,34 +1,39 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Alyysum - 설정</title>
-  <link rel="stylesheet" href="./css/font.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./css/font.css" />
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
+    body {
+      background-color: #f6f4f4;
+      margin: 0;
+    }
+
     header {
       background-color: #a7cba9;
-      color: w;
       padding: 20px;
       text-align: center;
-      font-size: 24px;
-    }
-    body {
-      background: #f6f4f4;
     }
   </style>
 </head>
 <body>
-   <!-- Header -->
-  <header class="bg-[#a7cba9]  top-0 z-10">
+
+  <!-- Header -->
+  <header class="bg-[#a7cba9] top-0 z-10">
     <div class="max-w-7xl mx-auto flex justify-center items-center px-8 py-2">
-      <!-- Center: Logo -->
-      <div class="flex justify-center items-center">
-        <span class="text-2xl font-bold tracking-wide text-white select-none items-center">Alyysum</span>
-      </div>
+      <span class="text-2xl font-bold tracking-wide text-white select-none">Alyysum</span>
     </div>
   </header>
-  <img src="./img/image_nobg.png" alt="">
+
+  <!-- Main Content -->
+  <main class="flex justify-center mt-10">
+    <img src="./img/image_nobg.png" alt="Alyssum 이미지" class="max-w-full h-auto" />
+  </main>
+
+  <a href="./마이페이지.html">돌아가기</a>
+
 </body>
 </html>
