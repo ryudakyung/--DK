@@ -1,31 +1,26 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" href="./css/font.css">
-  <title>Alyssum 로그인</title>
-  <!-- Tailwind CSS CDN -->
+  <meta charset="UTF-8" />
+  <title>Alyssum - 회원가입</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./css/font.css" />
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     body {
       background-color: #f6f4f4;
-    }
-    .header {
-      background-color: #a7cba9;
-      color: w;
-      padding: 20px;
-      text-align: center;
-      font-size: 24px;
+      margin: 0;
     }
 
     .login-wrapper {
-        display: flex;
+      display: flex;
       justify-content: center;
       align-items: center;
       height: calc(100vh - 80px);
       background-color: #d5e8d4;
       padding: 30px;
     }
+
     .login-box {
       background-color: #f6f4f4;
       padding: 40px;
@@ -45,7 +40,7 @@
       width: 100%;
       padding: 12px 15px;
       margin-bottom: 20px;
-      border: 1px solid #f6f4f4;
+      border: 1px solid #ccc;
       border-radius: 5px;
       font-size: 1rem;
     }
@@ -62,59 +57,71 @@
     }
 
     .login-box button:hover {
-      background-color: #f6e8b1;
+      background-color: #f0dc97;
     }
   </style>
 </head>
 <body>
 
   <!-- Header -->
-  <header class="bg-[#a7cba9]  top-0 z-10">
+  <header class="bg-[#a7cba9] top-0 z-10">
     <div class="max-w-7xl mx-auto grid grid-cols-3 items-center px-8 py-5">
-      <!-- Left: Hamburger Menu -->
-      <div class="flex items-center">
-        <button class="text-white focus:outline-none" aria-label="메뉴">
-          <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
-          </svg>
-        </button>
-      </div>
+      
+      <!-- Left: 빈 공간 -->
+      <div></div>
+
       <!-- Center: Logo -->
       <div class="flex justify-center">
-        <span class="text-2xl font-bold tracking-wide text-white select-none">Alyysum</span>
+        <span class="text-2xl font-bold tracking-wide text-white select-none">Alyssum</span>
       </div>
-  
-      <!-- Right: Auth Buttons -->
-      <div class="flex justify-end text-sm space-x-0 pr-0">
+
+      <!-- Right: 로그인 링크 -->
+      <div class="flex justify-end text-sm pr-0">
         <a href="./로그인페이지.html" class="text-white px-3 py-1 transition hover:underline">로그인</a>
       </div>
-  
     </div>
   </header>
 
+  <!-- 회원가입 폼 -->
   <div class="login-wrapper">
     <div class="login-box">
       <h2>회원가입</h2>
-      <input type="text" placeholder="아이디" id="userId">
-      <input type="password" placeholder="비밀번호" id="userPw">
-      <input type="password" placeholder="비밀번호 확인" id="userPw">
-      <button onclick="handleLogin()">회원가입</button>
+      <input type="text" placeholder="아이디" id="userId" />
+      <input type="password" placeholder="비밀번호" id="userPw" />
+      <input type="password" placeholder="비밀번호 확인" id="userPwCheck" />
+      <button onclick="handleSignup()">회원가입</button>
     </div>
   </div>
 
   <script>
-    function handleLogin() {
-      const id = document.getElementById('userId').value;
+    function handleSignup() {
+      const id = document.getElementById('userId').value.trim();
       const pw = document.getElementById('userPw').value;
+      const pwCheck = document.getElementById('userPwCheck').value;
 
-      if (id === '' || pw === '') {
-        alert("아이디와 비밀번호를 입력해주세요.");
-      } else {
-        alert(`환영합니다, ${id}님!`);
-        // 실제로는 여기에 로그인 처리 로직 추가 필요
-        // ex) 서버 요청 → 인증 → 토큰 저장 등
+      if (!id || !pw || !pwCheck) {
+        alert("모든 항목을 입력해주세요.");
+        return;
       }
+
+      if (pw !== pwCheck) {
+        alert("비밀번호가 일치하지 않습니다.");
+        return;
+      }
+
+      // 성공 메시지
+      alert(`환영합니다, ${id}님!`);
+      
+      // 여기에 서버 연동 로직 추가 가능
+      // 예: fetch("/api/signup", { method: "POST", body: ... })
     }
+
+    // Enter 키 눌렀을 때 로그인 실행
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Enter') {
+        handleSignup();
+      }
+    });
   </script>
 
 </body>
